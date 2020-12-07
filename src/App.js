@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import EmployeeList from './components/EmployeeList';
 import BirthdayList from './components/BirthdayList';
-import Alphabet from './components/Alphabet';
 
 import axios from 'axios';
 import './App.css';
@@ -29,9 +28,6 @@ function App() {
 
       <div className="brth-list">
         <BirthdayList users={state} />
-      </div>
-      <div>
-        <Alphabet users={state} />
       </div>
     </div>
   );
