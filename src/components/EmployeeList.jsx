@@ -28,15 +28,7 @@ const alp = [
   "Y",
   "Z",
 ];
-              {/* {
-                !employees_list[letter] ? employees_list[letter].map(function(employee){
-                <div className="fullName">
-                  <div className="left"><b>{employee.lastName} {employee.firstName}</b></div>
-                  <div className="right"><input type="checkbox" /></div>
-                </div>
-              }): 
-                  employees_list[letter] = []
-              } */}
+
 const displayEmployees = (props) => {
   let {object} = props;
 
@@ -52,14 +44,6 @@ const displayEmployees = (props) => {
       </div>
    </div>
   })}
-    {/* <div className="fullName">
-      <div className="left">
-        <b>{lastName} {firstName}</b>
-        </div>
-      <div className="right">
-        <input type="checkbox" />
-        </div>
-     </div> */}
   </>
   )
 
