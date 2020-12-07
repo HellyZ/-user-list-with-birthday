@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
+import EmployeeList from './components/EmployeeList';
+import BirthdayList from './components/BirthdayList';
+import Alphabet from './components/Alphabet';
+
+import axios from 'axios';
 import './App.css';
 
 function App() {
+
+  const [state, setState] = useState();
+  
+  useEffect(() => {
+
+    const apiUrl = 'https://yalantis-react-school-api.yalantis.com/api/task0/users';
+
+    axios.get(apiUrl).then((resp) => {
+      const users = resp.data;
+      setState(users);
+    });
+  }, []);
+
+  console.log(state);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="employees">
+        <EmployeeList users={state} />
+      </div>
+
+      <div className="brth-list">
+        <BirthdayList users={state} />
+      </div>
+      <div>
+        <Alphabet users={state} />
+      </div>
     </div>
   );
 }
